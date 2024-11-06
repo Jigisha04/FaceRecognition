@@ -1,9 +1,9 @@
 :root {
-    --primary: #2563eb;
-    --primary-dark: #1d4ed8;
-    --secondary: #f8fafc;
-    --text: #0f172a;
-    --text-light: #64748b;
+    --primary: #5c2d91;
+    --primary-dark: #4a237b;
+    --secondary: #f9f9f9;
+    --text: #333;
+    --text-light: #666;
 }
 
 * {
@@ -13,7 +13,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--text);
     background-color: white;
@@ -34,7 +34,7 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 700;
     color: var(--primary);
     text-decoration: none;
@@ -66,6 +66,8 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    animation: fadeIn 0.8s ease-in-out 0.4s;
+    animation-fill-mode: both;
 }
 
 .cta-btn:hover {
@@ -80,23 +82,47 @@ body {
     align-items: center;
     text-align: center;
     padding: 2rem;
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    background: linear-gradient(135deg, #5c2d91 0%, #8e44ad 100%);
+    color: white;
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, var(--primary) 0%, #3b82f6 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    transform: translateY(50px); 
+    opacity: 0; /* Start hidden */
+    animation: slideUp 0.8s ease forwards; 
 }
 
+/* Remove this from .hero-description if causing issues */
 .hero-description {
-    font-size: 1.25rem;
-    color: var(--text-light);
-    max-width: 600px;
+    font-size: 1.4rem;
+    max-width: 700px;
     margin-bottom: 2rem;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 0.8s ease forwards;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .features-section {
@@ -106,7 +132,7 @@ body {
 
 .features-section h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 4rem;
 }
 
@@ -123,6 +149,7 @@ body {
     border-radius: 12px;
     background: var(--secondary);
     transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .feature-card:hover {
@@ -130,7 +157,7 @@ body {
 }
 
 .feature-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     margin: 1rem 0;
     color: var(--primary);
 }
@@ -146,7 +173,7 @@ body {
 
 .testimonials-section h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 4rem;
 }
 
@@ -166,12 +193,12 @@ body {
 }
 
 .testimonial-card p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
 }
 
 .testimonial-card h4 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--text-light);
 }
 
@@ -182,7 +209,7 @@ body {
 
 .resources-section h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 2rem;
 }
 
@@ -190,6 +217,7 @@ body {
     max-width: 800px;
     margin: 0 auto 2rem;
     text-align: center;
+    font-size: 1.2rem;
 }
 
 .resources-section ul {
@@ -205,6 +233,7 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+    font-size: 1.1rem;
 }
 
 .resources-section a:hover {
@@ -218,7 +247,7 @@ body {
 
 .about-section h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 4rem;
 }
 
@@ -236,6 +265,11 @@ body {
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
 }
 
 .team-member img {
@@ -247,18 +281,19 @@ body {
 }
 
 .team-member h3 {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     margin-bottom: 0.5rem;
 }
 
 .team-member p {
     color: var(--text-light);
+    font-size: 1.1rem;
 }
 
 .footer {
     text-align: center;
     padding: 2rem;
-    background: var(--text);
+    background: var(--primary);
     color: white;
 }
 
@@ -273,10 +308,32 @@ body {
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     .hero-description {
+        font-size: 1.1rem;
+    }
+
+    .features-section h2,
+    .testimonials-section h2,
+    .resources-section h2,
+    .about-section h2 {
+        font-size: 2.2rem;
+    }
+
+    .feature-card h3,
+    .testimonial-card p,
+    .resources-section a,
+    .team-member h3 {
+        font-size: 1.3rem;
+    }
+
+    .feature-card p,
+    .testimonial-card h4,
+    .resources-section p,
+    .team-member p {
         font-size: 1rem;
     }
 }
+
