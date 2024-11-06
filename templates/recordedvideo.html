@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recorded Video</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #212121;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .top {
+            border-bottom: 5px solid #4caf50;
+        }
+
+        .feature-box h1 {
+            color: white;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .second {
+            background-color: #333;
+            padding: 15px 0;
+        }
+
+        .col-sm {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .new {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .custom-file-input {
+            display: none;
+        }
+
+        .btnCustom {
+            display: inline-block;
+            color: white;
+            background-color: #4caf50;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .btnCustom:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+<header class="feature-box top">
+    <h1><strong>Detecting items from a Recorded Video</strong></h1>
+</header>
+<header class="feature-box second">
+    <h1><strong>Output Video</strong></h1>
+</header>
+
+<section class="col-sm">
+    <img src="{{ url_for('video') }}" alt="Upload video">
+</section>
+<section>
+    <div class="new">
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <label for="file-upload" class="btnCustom">
+                Choose File
+            </label>
+            <input type="file" name="file" id="file-upload" class="custom-file-input" accept=".mp4">
+            <button type="submit" name="favorite" value="x" class="btnCustom">
+                Submit
+            </button>
+        </form>
+    </div>
+</section>
+</body>
+</html>

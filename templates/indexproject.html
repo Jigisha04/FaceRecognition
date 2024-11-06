@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Smart Fridge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.493/build/spline-viewer.js"></script>
+    <spline-viewer url="https://prod.spline.design/Mg2smhFJrw6oqSoa/scene.splinecode"></spline-viewer>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.158.0/examples/jsm/"
+          }
+        }
+    </script>
+    <style>
+        *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  background: #fff;
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.hero{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.nav-contain{
+  width:100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.nav{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 1rem 1rem;
+  border-radius: 1rem;
+}
+
+.nav .logo a{
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav .links{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav .links a{
+  color: #000;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.f-cont{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.f-cont img{
+  height: 80vh;
+  object-fit: cover;
+}
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="nav-contain">
+            <div class="nav">
+                <div class="logo">
+                    <a href="/home">Smart Fridge</a>
+                </div>
+                <div class="links">
+      
+                        <a href="/home">Home Page</a>
+                        <a href="/FrontPage">Recorded Video</a>
+                        <a href="/webcam">Fridge Cam</a>
+                  
+                </div>
+            </div>
+        </div>
+        <div class="f-cont">
+            <img src="./static/images/fridge.gif"/>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- 
+     <header class="feature-box right">
+        <nav>
+            <ul>
+            <li><a href="/home">Home Page</a></li>
+            <li><a href="/FrontPage">Recorded Video</a></li>
+            <li><a href="/webcam">Fridge Cam</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="details">
+        <h1>Sample Results</h1>
+
+    </section>
+    <section class="features">
+        <figure>
+            <img src="../static/images/1.png" alt="YOLOv8 Results 1">
+            <figcaption>YOLOv8 Results 1</figcaption>
+        </figure>
+        <figure>
+            <img src="../static/images/2.png" alt="YOLOv8 Results 2">
+            <figcaption>YOLOv8 Results 2</figcaption>
+        </figure>
+        <figure>
+            <img src="../static/images/3.png" alt="YOLOv8 Results 3">
+            <figcaption>YOLOv8 Results 3</figcaption>
+    </figure>
+    </section>
+ -->
