@@ -1,0 +1,12 @@
+# Ignore the 'venv' directory
+venv/
+
+# Ignore the 'logs' directory
+logs/
+
+# Ignore all .pyc files
+*.pyc
+
+# Ignore specific file types
+*.log
+*.tmp
