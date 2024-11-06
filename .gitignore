@@ -10,3 +10,5 @@ logs/
 # Ignore specific file types
 *.log
 *.tmp
+
+__pycache__/YOLO_Video.cpython-310.pyc
