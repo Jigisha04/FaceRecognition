@@ -1,0 +1,95 @@
+/* style.css */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox for overall layout */
+    flex-direction: column; /* Stack header and main content vertically */
+    min-height: 100vh; /* Ensure the page fills the viewport height */
+  }
+  
+  header {
+    background-color: #212121;
+    padding: 15px 0;
+    text-align: center;
+  }
+  
+  .top h1, .second h1 {
+    color: white;
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  .second {
+    background-color: #333;
+    padding: 10px 0;
+  }
+  
+  .main-content {
+    display: flex;
+    flex-grow: 1; /* Allow main content to take up remaining space */
+    padding: 20px;
+  }
+  
+  .webcam-container {
+    flex: 1; /* Webcam takes up majority of space */
+    margin-right: 20px; /* Spacing between webcam and sidebar */
+  }
+  
+  .webcam-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  
+  .sidebar {
+    width: 300px; /* Fixed width for sidebar */
+  }
+  
+  .temperature-box, .object-names-box {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .new {
+    display: inline-block;
+    color: white;
+    background-color: #4caf50;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .new:hover {
+    background-color: #388e3c;
+  }
+  
+  .object-names-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .object-names-box li {
+    margin-bottom: 5px;
+  }
+  
+  /* Responsive adjustments (optional) */
+  @media (max-width: 768px) {
+    .main-content {
+      flex-direction: column; /* Stack webcam and sidebar vertically on smaller screens */
+    }
+    .sidebar {
+      width: 100%; /* Sidebar takes full width */
+      margin-right: 0;
+    }
+  }
+  
