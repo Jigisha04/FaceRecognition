@@ -1,84 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Webcam</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/styles/camstyle.css"> </head>
-<body>
-  <header class="top">
-    <h1>Items Detection using Cam</h1>
-  </header>
-  <header class="second">
-    <h1>Live Detection</h1>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Webcam</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles/camstyle.css" />
+  </head>
+  <body>
+    <header class="top">
+      <h1>Items Detection using Cam</h1>
+    </header>
+    <header class="second">
+      <h1>Live Detection</h1>
+    </header>
 
-  <div class="main-content">
-    <div class="webcam-container">
-      <div class="video-placeholder" id="video-placeholder">
-        <p>Loading webcam...</p>
+    <div class="main-content">
+      <div class="webcam-container">
+        <div class="video-placeholder" id="video-placeholder">
+          <p>Loading webcam...</p>
+        </div>
+        <canvas id="captureCanvas" style="display: none"></canvas>
+        <img
+          src="{{ url_for('webapp') }}"
+          alt="Uploaded video"
+          id="webcam-video"
+          onload="hidePlaceholder()"
+        />
+        <div class="controls">
+          <button id="start-detection">Start Detection</button>
+          <button id="stop-detection" disabled>Stop Detection</button>
+        </div>        
       </div>
-      <img src="{{ url_for('webapp') }}" alt="Uploaded video" id="webcam-video" onload="hidePlaceholder()">
+
+      <div class="sidebar">
+        <div class="temperature-box">
+          <h2>Outside Temperature</h2>
+          <p id="temperature">Loading...</p>
+        </div>
+        <div class="object-names-box">
+          <h2>Detected Objects</h2>
+          <ul id="object-names-list"></ul>
+        </div>
+        <div class="nutrition-log-box">
+          <h2>Nutritional Intake Log</h2>
+          <ul id="food-log-list"></ul>
+        </div>
+      </div>
     </div>
-    <div class="sidebar">
-      <div class="temperature-box">
-        <h2>Outside Temperature</h2>
-        <p id="temperature">Loading...</p>
-      </div>
-      <div class="object-names-box">
-        <h2>Detected Objects</h2>
-        <ul id="object-names-list"></ul>
-      </div>
-    </div>
-  </div>
-  
 
-
-  <script>
-    const apiKey = '323d6f5173af5d4a052f92f718b4860a';
-    const city = 'phagwara,in';
-
-    const fetchTemperature = async () => {
-      try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`);
-        const data = await response.json();
-        const temperatureElement = document.getElementById('temperature');
-        temperatureElement.textContent = `${data.main.temp} °C`;
-      } catch (error) {
-        console.error('Error fetching temperature:', error);
-        const temperatureElement = document.getElementById('temperature');
-        temperatureElement.textContent = 'Error fetching temperature'; //Inform user of error
-      }
-    };
-
-    fetchTemperature();
-
-    function hidePlaceholder() {
-  document.getElementById('video-placeholder').style.display = 'none';
-}
-
-  </script>
-
-  <script>
-    const source = new EventSource("/object_names");
-    const objectNamesList = document.getElementById("object-names-list");
-
-    source.onmessage = function(event) {
-      const objectName = event.data;
-      const listItem = document.createElement("li");
-      listItem.textContent = objectName;
-      objectNamesList.appendChild(listItem);
-    };
-
-    source.onerror = function(error) {
-      console.error("EventSource failed:", error);
-      // Optionally display an error message to the user
-      const errorElement = document.createElement('p');
-      errorElement.textContent = "Error receiving object detection data.";
-      objectNamesList.appendChild(errorElement);
-    };
-  </script>
-</body>
+    <script src="/static/scripts/livecam.js"></script>
+  </body>
 </html>
-
