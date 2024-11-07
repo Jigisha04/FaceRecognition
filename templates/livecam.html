@@ -16,7 +16,10 @@
 
   <div class="main-content">
     <div class="webcam-container">
-      <img src="{{ url_for('webapp') }}" alt="Uploaded video">
+      <div class="video-placeholder" id="video-placeholder">
+        <p>Loading webcam...</p>
+      </div>
+      <img src="{{ url_for('webapp') }}" alt="Uploaded video" id="webcam-video" onload="hidePlaceholder()">
     </div>
     <div class="sidebar">
       <div class="temperature-box">
@@ -29,6 +32,7 @@
       </div>
     </div>
   </div>
+  
 
 
   <script>
@@ -49,6 +53,11 @@
     };
 
     fetchTemperature();
+
+    function hidePlaceholder() {
+  document.getElementById('video-placeholder').style.display = 'none';
+}
+
   </script>
 
   <script>
