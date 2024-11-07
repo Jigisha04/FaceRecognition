@@ -35,10 +35,11 @@ body {
   
   .webcam-container {
     position: relative;
-    width: 840px; /* Adjust to the desired width */
-    height: 580px; /* Adjust to the desired height */
-    /* border: 2px solid #ccc; Optional: adds a border */
+    width: 840px; 
+    height: 580px; 
     padding: 20px;
+    /* border: 2px solid #ccc; */
+    margin: 20px auto;
   }
   
   .webcam-container img {
@@ -53,7 +54,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,8 +66,38 @@ body {
   #webcam-video {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 90%;
     object-fit: cover;
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .controls button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .controls button:hover {
+    background-color: #0056b3;
+  }
+  
+  .controls button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
   }
   
   
@@ -105,6 +136,8 @@ body {
   .object-names-box li {
     margin-bottom: 5px;
   }
+
+
   
   /* Responsive adjustments (optional) */
   @media (max-width: 768px) {
