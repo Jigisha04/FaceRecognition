@@ -5,7 +5,7 @@ venv/
 logs/
 
 # Ignore all .pyc files
-*.pyc
+# *.pyc
 
 # Ignore specific file types
 *.log
