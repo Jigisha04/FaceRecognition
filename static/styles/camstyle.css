@@ -147,48 +147,103 @@ body {
   }
 
   .nutrition-details {
-    width: 100%;
+    /* width: 100%; */
     margin-top: 20px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .nutrition-details h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+  .nutrition-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
   }
   
-  #nutrition-content {
-    max-height: 300px;
-    overflow-y: auto;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
+  .nutrition-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  #food-buttons-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  #food-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
   }
 
   .food-button {
-    margin: 5px;
     padding: 10px 15px;
-    border: none;
-    background-color: #007BFF;
+    margin: 0px 10px;
+    font-size: 14px;
+    font-weight: bold;
     color: #fff;
+    background-color: #4CAF50;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
   }
   
   .food-button:hover {
-    background-color: #0056b3;
+    background-color: #45a049;
   }
   
-  #food-buttons-container {
-    margin-bottom: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  #nutrition-content {
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #nutrition-content h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* #nutrition-content p {
+    font-size: 16px;
+    color: #666;
+  }
+   */
+  .nutrition-info-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .nutrition-info-item {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .nutrition-info-item h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .nutrition-info-item p {
+    font-size: 16px;
+    color: #666;
   }
   
   

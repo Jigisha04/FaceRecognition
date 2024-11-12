@@ -1,37 +1,97 @@
-// Add an event listener to handle click events on food log items
-document.getElementById('food-log-list').addEventListener('click', async function (event) {
-    if (event.target.tagName === 'LI') {
-      const foodName = event.target.textContent;
-      fetchNutritionalDetails(foodName);
-    }
-  });
-  
+
   // Function to fetch nutritional details from a nutrition API
   async function fetchNutritionalDetails(foodName) {
     const apiKey = 'baa8a0e97917d1b5e9bab6c5b32ba4b9'; // Replace with your actual API key
     const appId = '41dafeed'; // Replace with your actual app ID (if required)
-    
+
+    // const nutritionContent = document.getElementById('nutrition-content');
+    // nutritionContent.innerHTML = '';
+    // const foodNameElement = document.getElementById('food-name');
+    // foodNameElement.textContent = foodName;
+
+  
     try {
-      // Example API request to Edamam or Spoonacular
       const response = await fetch(`https://api.edamam.com/api/food-database/v2/parser?ingr=${encodeURIComponent(foodName)}&app_id=${appId}&app_key=${apiKey}`);
       const data = await response.json();
   
       if (data.hints && data.hints.length > 0) {
         const nutrients = data.hints[0].food.nutrients;
-        const healthBenefits = `Calories: ${nutrients.ENERC_KCAL} kcal, Carbs: ${nutrients.CHOCDF} g, Protein: ${nutrients.PROCNT} g, Fat: ${nutrients.FAT} g`;
+
+        const nutritionInfoContainer = document.createElement('div');
+        nutritionInfoContainer.className = 'nutrition-info-container';
   
-        document.getElementById('nutrition-content').innerHTML = `
-          <p><strong>Food:</strong> ${foodName}</p>
-          <p><strong>Nutritional Facts:</strong></p>
-          <ul>
-            <li>Calories: ${nutrients.ENERC_KCAL} kcal</li>
-            <li>Carbohydrates: ${nutrients.CHOCDF} g</li>
-            <li>Protein: ${nutrients.PROCNT} g</li>
-            <li>Fat: ${nutrients.FAT} g</li>
-          </ul>
-          <p><strong>Health Benefits:</strong> This food item is generally healthy. However, please consult a nutritionist for personalized advice.</p>
-          <p><strong>Diabetic Suitability:</strong> Consult with a doctor if you're diabetic, as nutrition varies by individual.</p>
+        const caloriesItem = document.createElement('div');
+        caloriesItem.className = 'nutrition-info-item';
+        caloriesItem.innerHTML = `
+          <h3>Calories</h3>
+          <p id="calories">${nutrients.ENERC_KCAL} kcal</p>
         `;
+  
+        const totalFatItem = document.createElement('div');
+        totalFatItem.className = 'nutrition-info-item';
+        totalFatItem.innerHTML = `
+          <h3>Total Fat</h3>
+          <p id="total-fat">${nutrients.FAT} g</p>
+        `;
+  
+        const totalCarbsItem = document.createElement('div');
+        totalCarbsItem.className = 'nutrition-info-item';
+        totalCarbsItem.innerHTML = `
+          <h3>Total Carbohydrates</h3>
+          <p id="total-carbs">${nutrients.CHOCDF} g</p>
+        `;
+  
+        const fiberItem = document.createElement('div');
+        fiberItem.className = 'nutrition-info-item';
+        fiberItem.innerHTML = `
+          <h3>Dietary Fiber</h3>
+          <p id="dietary-fiber">${nutrients.FIBTG} g</p>
+        `;
+  
+        const proteinItem = document.createElement('div');
+        proteinItem.className = 'nutrition-info-item';
+        proteinItem.innerHTML = `
+          <h3>Protein</h3>
+          <p id="protein">${nutrients.PROCNT} g</p>
+        `;
+
+        const healthBenefitsItem = document.createElement('div');
+        // healthBenefitsItem.className = 'nutrition-info-item';
+        healthBenefitsItem.innerHTML = `
+          <h3>Health Benefits</h3>
+          <p>This food item is generally healthy. However, please consult a nutritionist for personalized advice.</p>
+        `;
+  
+        const diabeticSuitabilityItem = document.createElement('div');
+        // diabeticSuitabilityItem.className = 'nutrition-info-item';
+        diabeticSuitabilityItem.innerHTML = `
+          <h3>Diabetic Suitability</h3>
+          <p>Consult with a doctor if you're diabetic, as nutrition varies by individual.</p>
+        `;
+  
+        nutritionInfoContainer.appendChild(caloriesItem);
+        nutritionInfoContainer.appendChild(totalFatItem);
+        // nutritionInfoContainer.appendChild(saturatedFatItem);
+        // nutritionInfoContainer.appendChild(cholesterolItem);
+        // nutritionInfoContainer.appendChild(sodiumItem);
+        nutritionInfoContainer.appendChild(totalCarbsItem);
+        nutritionInfoContainer.appendChild(fiberItem);
+        // nutritionInfoContainer.appendChild(sugarsItem);
+        nutritionInfoContainer.appendChild(proteinItem);
+        // nutritionInfoContainer.appendChild(healthBenefitsItem);
+        // nutritionInfoContainer.appendChild(diabeticSuitabilityItem);
+
+  
+        const nutritionContentElement = document.getElementById('nutrition-content');
+        nutritionContentElement.innerHTML = `
+        <p><strong>Food:</strong> ${foodName}</p>
+        <p><strong>Nutritional Facts:</strong></p>
+      `;
+        nutritionContentElement.appendChild(nutritionInfoContainer);
+        nutritionContentElement.appendChild(healthBenefitsItem);
+        nutritionContentElement.appendChild(diabeticSuitabilityItem);
+
+        
       } else {
         document.getElementById('nutrition-content').textContent = 'No nutritional information found for this item.';
       }
@@ -43,7 +103,7 @@ document.getElementById('food-log-list').addEventListener('click', async functio
 
   // Function to create a button for each logged food item
 function addFoodButton(foodName) {
-    const foodButtonsContainer = document.getElementById('food-buttons-container');
+    const foodButtonsContainer = document.getElementById('food-buttons');
     
     // Create a button element
     const foodButton = document.createElement('button');
