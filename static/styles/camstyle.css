@@ -39,7 +39,7 @@ body {
     height: 580px; 
     padding: 20px;
     /* border: 2px solid #ccc; */
-    margin: 20px auto;
+    margin: 20px 60px;
   }
   
   .webcam-container img {
@@ -105,7 +105,7 @@ body {
     width: 300px; /* Fixed width for sidebar */
   }
   
-  .temperature-box, .object-names-box {
+  .temperature-box, .object-names-box, .food-log-box {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -126,6 +126,15 @@ body {
   
   .new:hover {
     background-color: #388e3c;
+  }
+  
+  .scrollable-section {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
   }
   
   .object-names-box ul {
