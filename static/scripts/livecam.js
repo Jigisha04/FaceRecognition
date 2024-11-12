@@ -28,6 +28,8 @@ let source = null;
 // Start detection - creates a new EventSource connection
 function startDetection() {
   // Only start a new connection if it's not already active
+  document.getElementById("webcam-video").src = "/webapp";
+
   if (!source) {
     source = new EventSource("/object_names");
 
@@ -63,6 +65,10 @@ function startDetection() {
 
 // Stop detection - closes the EventSource connection
 function stopDetection() {
+  document.getElementById("webcam-video").src = "";
+  document.getElementById('video-placeholder').style.display = 'block';
+
+
   if (source) {
     source.close();
     source = null; // Reset the EventSource
