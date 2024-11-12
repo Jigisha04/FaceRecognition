@@ -146,6 +146,53 @@ body {
     margin-bottom: 5px;
   }
 
+  .nutrition-details {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nutrition-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  #nutrition-content {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+
+  .food-button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .food-button:hover {
+    background-color: #0056b3;
+  }
+  
+  #food-buttons-container {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  
+
 
   
   /* Responsive adjustments (optional) */
