@@ -3,12 +3,6 @@
   async function fetchNutritionalDetails(foodName) {
     const apiKey = 'baa8a0e97917d1b5e9bab6c5b32ba4b9'; // Replace with your actual API key
     const appId = '41dafeed'; // Replace with your actual app ID (if required)
-
-    // const nutritionContent = document.getElementById('nutrition-content');
-    // nutritionContent.innerHTML = '';
-    // const foodNameElement = document.getElementById('food-name');
-    // foodNameElement.textContent = foodName;
-
   
     try {
       const response = await fetch(`https://api.edamam.com/api/food-database/v2/parser?ingr=${encodeURIComponent(foodName)}&app_id=${appId}&app_key=${apiKey}`);

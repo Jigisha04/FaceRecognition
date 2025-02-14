@@ -43,7 +43,7 @@ function startDetection() {
       objectNamesList.appendChild(listItem);
 
       // Check if the detected object is food and log it
-      const knownFoods = ['apple', 'banana', 'carrot', 'sandwich']; // Add more as needed
+      const knownFoods = ['apple', 'banana', 'carrot', 'orange', 'carrort', 'pineapple', 'muskmelon', 'watermelon', 'sandwich', 'tomato', 'bread', 'cake', 'chips', 'chocolate', 'candy']; // Add more as needed
       if (knownFoods.includes(objectName.toLowerCase())) {
         logFoodItem(objectName);
       }

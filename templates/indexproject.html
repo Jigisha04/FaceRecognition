@@ -13,28 +13,33 @@
 
 <body>
     <nav class="navbar">
-        <a href="#" class="logo animate__animated animate__fadeInLeft">NutriVision</a>
+        <a href="#" class="logo animate__animated animate__fadeInLeft">Smart Food Detector</a>
         <div class="nav-links animate__animated animate__fadeInRight">
             <a href="#features">Features</a>
-            <a href="#about">About</a>
+            <a href="#how-to-use">How to use</a>
             <a href="#testimonials">Testimonials</a>
             <a href="#resources">Resources</a>
+            <a href="#about">Team</a>
             <a href="#contact">Contact</a>
-            <button class="cta-btn">Try Now</button>
+            <button class="cta-btn" onclick="window.location.href='/webcam'">Try Now</button>
         </div>
     </nav>
 
     <!-- HERO -->
     <section class="hero-section">
-        <h1 class="hero-title">Welcome to NutriVision</h1>
+        <h1 class="hero-title">Welcome to Smart Food Detector</h1>
         <p class="hero-description">Empowering your food journey with AI-driven insights and personalized recommendations.</p>
-        <button class="cta-btn" onclick="window.location.href='/webcam'">Start Detecting</button>
+        <div id="action-buttons">
+            <button class="cta-btn" onclick="window.location.href='/webcam'">Start Detecting</button>
+            <button class="cta-btn" onclick="window.location.href='/FrontPage'">Upload Video</button>
+        </div>
+
     </section>
        
 
     <!-- FEATURES -->
     <section id="features" class="features-section">
-        <h2 class="animate__animated animate__fadeInDown">Why Choose NutriVision?</h2>
+        <h2 class="animate__animated animate__fadeInDown">Why Choose Smart Food Detector?</h2>
         <div class="feature-card-container">
             <div class="feature-card animate__animated animate__fadeInUp">
                 <h3>Real-Time Detection</h3>
@@ -51,6 +56,33 @@
             <div class="feature-card animate__animated animate__fadeInUp">
                 <h3>Meal Planning</h3>
                 <p>Plan your meals effortlessly with AI-suggested combinations based on your health objectives.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW TO USE -->
+    <section id="how-to-use" class="how-to-use-section">
+        <h2 class="animate__animated animate__fadeInDown">How to Use</h2>
+        <div class="how-to-use-steps">
+            <div class="step animate__animated animate__fadeInUp">
+                <h3><i class="fas fa-camera"></i> Step 1: Real-Time Detection</h3>
+                <p>Click on the <strong>“Try Now”</strong> button to activate the food detection feature. Use your device camera to scan your food, and let our AI analyze it in real time.</p>
+            </div>
+            <div class="step animate__animated animate__fadeInUp">
+                <h3><i class="fas fa-cloud-upload-alt"></i> Step 2: Allow camera access</h3>
+                <p>Click on the <strong>Start Detection</strong> button and allow camera access to get detailed insights into the food items identified.</p>
+            </div>
+            <div class="step animate__animated animate__fadeInUp">
+                <h3><i class="fas fa-chart-pie"></i> Step 3: View Nutritional Analysis</h3>
+                <p>Access a comprehensive breakdown of the nutrients in your meals to align with your health goals.</p>
+            </div>
+            <div class="step animate__animated animate__fadeInUp">
+                <h3><i class="fas fa-utensils"></i> Step 4: Explore Recipes</h3>
+                <p>Based on your detected food items, explore our curated list of personalized recipes to make the most of your ingredients.</p>
+            </div>
+            <div class="step animate__animated animate__fadeInUp">
+                <h3><i class="fas fa-clipboard-list"></i> Step 5: Plan Your Meals</h3>
+                <p>Use our meal planning feature to organize balanced meals for the day or week, tailored to your dietary preferences.</p>
             </div>
         </div>
     </section>

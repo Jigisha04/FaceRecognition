@@ -387,3 +387,88 @@ body {
     }
 }
 
+
+
+/* How to Use Section Styles */
+.how-to-use-section {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.how-to-use-section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.how-to-use-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    padding: 0 15px;
+}
+
+.step {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.step h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.step p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.step i {
+    font-size: 2rem;
+    color: #5c2d91;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.step a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #5c2d91;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.step a:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .how-to-use-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .step {
+        padding: 20px;
+    }
+}
+
